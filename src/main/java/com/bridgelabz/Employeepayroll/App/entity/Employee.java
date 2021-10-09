@@ -1,4 +1,4 @@
-package com.bridgelabz.Employeepayroll.App.Entity;
+package com.bridgelabz.Employeepayroll.App.entity;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
-package com.bridgelabz.Employeepayroll.App.Controller;
+package com.bridgelabz.Employeepayroll.App.controller;
 
-import com.bridgelabz.Employeepayroll.App.Entity.Employee;
-import com.bridgelabz.Employeepayroll.App.Service.EmployeePayrollService;
+import com.bridgelabz.Employeepayroll.App.entity.Employee;
+import com.bridgelabz.Employeepayroll.App.service.EmployeePayrollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +29,7 @@ public class EmployeePayrollController {
     }
 
     @GetMapping(value = "/get-employee-by-Name")
-    public Employee getStudentByName(@RequestParam String name) {
+    public Employee getEmployeeByName(@RequestParam String name) {
         return employeePayrollService.getEmployeeByName(name);
     }
 
@@ -39,7 +39,7 @@ public class EmployeePayrollController {
     }
 
     @PostMapping(value = "/employee")
-    public Employee addStudent(@RequestBody Employee employeeEntity) {
+    public Employee addEmployee(@RequestBody Employee employeeEntity) {
         return employeePayrollService.addEmployee(employeeEntity);
     }
 
