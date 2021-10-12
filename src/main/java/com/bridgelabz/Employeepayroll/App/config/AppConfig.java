@@ -1,2 +1,14 @@
-package com.bridgelabz.Employeepayroll.App.config;public class AppConfig {
+package com.bridgelabz.Employeepayroll.App.config;
+
+
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AppConfig {
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
 }

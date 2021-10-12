@@ -1,5 +1,6 @@
 package com.bridgelabz.Employeepayroll.App.controller;
 
+import com.bridgelabz.Employeepayroll.App.DTO.EmployeeDTO;
 import com.bridgelabz.Employeepayroll.App.entity.Employee;
 import com.bridgelabz.Employeepayroll.App.service.EmployeePayrollService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class EmployeePayrollController {
 
     @GetMapping(value = "/employees")
     public List<Employee> employees(){
-        return EmployeePayrollService.employees();
+        return employeePayrollService.employees();
     }
 
     @GetMapping(value = "/get-employee-by-id")
@@ -44,8 +45,8 @@ public class EmployeePayrollController {
     }
 
     @PutMapping(value = "/employee")
-    public Employee updateEmployee(@RequestBody Employee employeeEntity) {
-        return employeePayrollService.updateEmployee(employeeEntity);
+    public Employee updateEmployee( @PathVariable int id, @RequestBody EmployeeDTO employeeDTO) {
+        return employeePayrollService.updateEmployee(id,employeeDTO);
     }
 
     @DeleteMapping(value = "/employee")
