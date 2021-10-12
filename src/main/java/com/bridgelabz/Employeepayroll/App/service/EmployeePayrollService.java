@@ -37,7 +37,7 @@ public class EmployeePayrollService {
     }
 
     /**
-     * Method for getting student by its id
+     * Method for getting employee by its id
      * @param id unique identifier for record
      * @return singular {@link Employee Entity}
      */
