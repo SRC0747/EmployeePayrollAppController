@@ -5,10 +5,13 @@ import com.bridgelabz.Employeepayroll.App.entity.Employee;
 import com.bridgelabz.Employeepayroll.App.service.EmployeePayrollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.List;
 
+@RequestMapping("/Api")
 @RestController
+@EnableSwagger2
 public class EmployeePayrollController {
     // CRUD
     //read
@@ -44,7 +47,7 @@ public class EmployeePayrollController {
         return employeePayrollService.addEmployee(employeeEntity);
     }
 
-    @PutMapping(value = "/employee")
+    @PutMapping(value = "/employee/{id}")
     public Employee updateEmployee( @PathVariable int id, @RequestBody EmployeeDTO employeeDTO) {
         return employeePayrollService.updateEmployee(id,employeeDTO);
     }
